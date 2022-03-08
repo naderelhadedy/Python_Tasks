@@ -1,0 +1,39 @@
+OOP(1)
+
+- object oriented programming / OOP
+- it's a paradigm or coding style consists of methods (functions) and attributes (data)
+- they are bundled in an object
+- it make the code organized, readable and reusable
+- everything in python is an object
+- Class is the template for creating objects > (object constructor)
+- Instance is the object and it has the same attribute and methods of the class
+- __init__ method is one of magic methods and built in ones, it's called every time you create an object from class
+- 'self' parameter in __init__ (self) / refers to current instance created from the class and should be the first parameter
+- print( dir() ) / dir() returns the content of its parameter like the built-in functions and methods
+- print(object.__class__) / prints the object belongs to which class
+- you couldn't perform specific operations inside dictionaries for example, so oop classes allow you to do this using methods that can perform what you want easily
+
+
+- attributes of instances are found inside constructor function __init__ and referred by self
+- methods should take self as a parameter
+- to print values >> instance.attribute or instance.method >>> and the instance should be either the object name when calling outside class or self if it's inside class
+- instance methods can access attributes and also methods inside its object
+- attributes of instances are inside constructor __init__
+- attributes of class are outside contsructor __init__ and inside class
+- if a condition is not met, you can print a message as an error >> this can be done with >> raise ValueError("name is not allowed")
+
+
+- for class methods, we use the decorator @classmethod before defining it and it must has the parameter cls to point for the class not the instance
+- you can use class methods without creating instances of the class
+
+
+- for static methods, it's bound to the class not the instance and we use @staticmethod and it takes no parameters but you can use if needed
+- it's used when doing something that doesn't relate to the class or the object
+
+
+
+# magic methods
+
+- instance.__class__ / returns the class to which the instance belongs
+- __str__ / gives a human readable output of the object
+- __len__ / returns the length of the container and it's called when we use len() methods on the object or the instance

@@ -1,0 +1,41 @@
+# file handling
+
+file = open("", "") / takes file name then mode and the default is 'r' > read
+
+# a \ append
+#  r \ read
+# w \ write
+# x \ create
+
+>> absolute path / relative path
+
+# os / operating system library to be imported
+# import os
+> to get path of current working directory
+>> print(os.getcwd())
+
+> return the absolute path of the current opened file
+>> print(os.path.abspath(__file__)
+
+> takes file name and returns containing folder name
+>> print(os.path.dirname(os.path.abspath(__file__))) / directory of the opened file
+
+> change current working directory and takes directory ot be the main / you can give it the current dir of your file
+>> os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
+
+# to give the directory like argument but it can have a problem in it if there was a folder starting with n for example
+"c\nader\nfiles\nader.txt" >> here \n can make a problem and will understand it as an order not just a name
+so to overcome this give it r letter before "" to understand it as raw and ignore the content of it
+
+file = open(r"c\nader\nfiles\nader.txt")
+
+
+# read, loop and close
+
+# write, append, cursor position
+
+> methods
+# truncate, tell, seek
+
+# os.remove()

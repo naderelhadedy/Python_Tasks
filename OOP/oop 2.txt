@@ -1,0 +1,71 @@
+OOP(2)
+
+# Inheritance
+
+- to inherit methods or things from a class into another class without repeating defining methods we type like this / class Apple(Food):
+- this means that apple class inherits from food class
+- if you have __init__ in the second class, you won't inherit from __init__'s first class and this will override the first one which you inherit from
+- write the follwoing to inherit this / Food.__init__(self, name) / inherits the init function from the parent class
+- in other way > super().__init__(name) / super() > represents the parent class and __init__ takes only the required parameters to be inherited and you don't need to write self
+- you can inherit methods and create your own methods and also you can inherit attributes and create your own
+- if you want to override a method that is inherited from primary class, create a method with the same name in the secondary class
+
+# Multiple inheritance
+
+- if you want to inherit from more than one class / class Derived(classOne, classTwo):
+- print(Derived.mro()) / prints the order of inheritance for this class which is first the main class then classOne then classTwo
+- mro is short for multiple resolution order
+- it can access methods from different classes when there is no override in names
+- another way for multiple inheritance is that if a class two inherits from class one and class three inherits from class two so class three has same methods from class one and 
+ofcourse from class two if there is anything different
+
+
+# Polymorphism
+
+- it represents the same name for a method  but with different behavior in other places
+- for example, + operator acts like addition for numbers and concatenation for strings, len function measure number of items in a list and number of letters in a string, this is different 
+behavior for the same method
+- if class B inherits from class A and you want to use a method from class A in an instance from B and you want to check that this method must be implemented in class B so
+in class A use >> raise NotImplementedError("Derived class must implement this method")
+- so we have the same method called do_something() that does a different thing or has a different behavior in each class
+
+
+
+# Encapsulation
+
+- This restricts access to the data stored in attributes and methods
+- there are three types: public, protected, private
+- public >> attributes and methods are modified and run from everywhere inside or outside class
+- protected >> attributes and methods are accessed within the class and subclasses and we use the prefix _ before it as an indication only for developers, just tell the developer not to call this
+outside the class and subclasses
+- private >> attributes and methods are accessed from within the class or object only, attributes can not be modified outside the class, prefixed with __ before it and this is also
+for developers as an indication so they have to follow the rules but the interpreter will print values and won't follow these rules in protected or private property
+- So Encapsulation in python represents rules only not restrictions
+
+
+
+# Getters and Setters
+
+- you can create a function to get a private property instead of calling it outside the class so you can define a method to do this inside the class
+- the same for setting a new value, you can create a method that change the value to the new parameter given to this method
+- this is the right way to follow in OOP to get and set values
+
+
+# property decorator
+
+- you can call a method like a property or attribute by calling it without () and write at the line before defining the method >> @property
+- if you called the method with () in presence of @property, you will get type error saying that the 'created' object is not callable [the returned string or integer] as it's trying to instantiate
+ the object from a class called str if the method is returning string or a class called int if it's returning integer
+
+
+# Abstract Base Class 'ABC' 
+
+- a class is called abstract class if has one or more abstract methods
+- abc module provides infrastructure for defining custom abstract base classes
+- ABCMeta class / used for defining abstract base classes
+- we use @abstractmethod decorator on the method to define that it's abstract method
+- to define abstract class and abstract method, firts / from abc import ABCMeta, abstractmethod
+- go to the targeted class and write: class Xyz(metaclass=ABCMeta) to define it as abstract class
+- go to the targeted method and write before it: @abstractmethod >> and this function should do nothing because it's abstract so write: pass
+- the inheriting classes should follow the abstract base class with the same abstract methods, so we should create the same abstracted method from the base class in each derived class
+- so the derived classes should follow the same pattern of the abstract base class and should have the same abstract methods from the abstract base class
